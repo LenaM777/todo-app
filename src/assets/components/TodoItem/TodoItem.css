@@ -8,6 +8,7 @@
     border: 1px solid #eee;
     border-radius: 8px;
     box-shadow: 2px 2px 8px 2px lightgray; 
+    min-width: 320px;
   }
 
 .todo-row {

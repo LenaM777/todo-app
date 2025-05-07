@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import TodoForm from "./assets/components/TodoForm/TodoForm";
 import TodoItem from "./assets/components/TodoItem/TodoItem";
+import "./App.css";
+import { RiCalendarTodoLine } from "react-icons/ri";
 
 const App = () => {
   const [todos, setTodos] = useState(
@@ -60,8 +62,12 @@ const App = () => {
   }
 
   return (
-    <div>
-      <h1>To-Do List</h1>
+    <div className="todo-app">
+      <div className="todo-title">
+        <RiCalendarTodoLine className="icon-title" />
+        <h1>To-Do List</h1>
+      </div>
+
       <TodoForm addTask={addTask} />
       {todos.map((todo, index) => (
         <TodoItem
