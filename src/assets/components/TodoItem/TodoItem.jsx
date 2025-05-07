@@ -7,14 +7,14 @@ import {
   RiArrowDropDownFill,
 } from "react-icons/ri";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, toggleTask }) => {
   return (
     <div className="todo-item">
-      <div className="todo-row">
+      <div className="todo-row" onClick={() => toggleTask(todo.id)}>
         <div className="todo-check">
-          <FaCircleCheck />
+          {todo.completed ? <FaCircleCheck /> : ""}
         </div>
-        <p>{todo.task}</p>
+        <p className={todo.completed ? "complete" : ""}> {todo.task} </p>
       </div>
       <div className="row-buttons">
         <RiDeleteBin6Line />

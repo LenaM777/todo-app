@@ -10,10 +10,18 @@ const App = () => {
       const newTask = {
         id: Date.now(),
         task: userInput,
+        completed: false,
       };
 
       setTodos([newTask, ...todos]);
     }
+  }
+
+  function toggleTask(id) {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : { ...todo }
+    );
+    setTodos(updatedTodos);
   }
 
   return (
@@ -21,7 +29,7 @@ const App = () => {
       <h1>To-Do List</h1>
       <TodoForm addTask={addTask} />
       {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} />
+        <TodoItem todo={todo} key={todo.id} toggleTask={toggleTask} />
       ))}
     </div>
   );
