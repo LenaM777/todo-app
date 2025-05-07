@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoForm from "./assets/components/TodoForm/TodoForm";
 import TodoItem from "./assets/components/TodoItem/TodoItem";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(
+    localStorage.getItem("todolist")
+      ? JSON.parse(localStorage.getItem("todolist"))
+      : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("todolist", JSON.stringify(todos));
+  }, [todos]);
 
   function addTask(userInput) {
     if (userInput.trim() !== "") {
