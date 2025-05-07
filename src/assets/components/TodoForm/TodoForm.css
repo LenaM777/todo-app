@@ -1,0 +1,31 @@
+.todo-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .todo-input {
+    padding: 10px 16px;
+    border: 1px solid darkgray;
+    border-radius: 8px 0 0 8px;
+    font-size: 1rem;
+  }
+  
+  .todo-input:focus {
+    outline: none;
+    border: 1px solid orange;
+  }
+  
+  .todo-button {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: 2px solid orange;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .todo-button:hover {
+    cursor: pointer;
+  }
