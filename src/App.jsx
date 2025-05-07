@@ -29,16 +29,41 @@ const App = () => {
     setTodos(updatedTodos);
   }
 
+  function moveTaskUp(index) {
+    if (index > 0) {
+      const updatedTodos = [...todos];
+      [updatedTodos[index], updatedTodos[index - 1]] = [
+        updatedTodos[index - 1],
+        updatedTodos[index],
+      ];
+      setTodos(updatedTodos);
+    }
+  }
+
+  function moveTaskDown(index) {
+    if (index < todos.length - 1) {
+      const updatedTodos = [...todos];
+      [updatedTodos[index], updatedTodos[index + 1]] = [
+        updatedTodos[index + 1],
+        updatedTodos[index],
+      ];
+      setTodos(updatedTodos);
+    }
+  }
+
   return (
     <div>
       <h1>To-Do List</h1>
       <TodoForm addTask={addTask} />
-      {todos.map((todo) => (
+      {todos.map((todo, index) => (
         <TodoItem
           todo={todo}
           key={todo.id}
+          index={index}
           toggleTask={toggleTask}
           deleteTask={deleteTask}
+          moveTaskUp={moveTaskUp}
+          moveTaskDown={moveTaskDown}
         />
       ))}
     </div>
