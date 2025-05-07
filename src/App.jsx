@@ -24,12 +24,22 @@ const App = () => {
     setTodos(updatedTodos);
   }
 
+  function deleteTask(id) {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  }
+
   return (
     <div>
       <h1>To-Do List</h1>
       <TodoForm addTask={addTask} />
       {todos.map((todo) => (
-        <TodoItem todo={todo} key={todo.id} toggleTask={toggleTask} />
+        <TodoItem
+          todo={todo}
+          key={todo.id}
+          toggleTask={toggleTask}
+          deleteTask={deleteTask}
+        />
       ))}
     </div>
   );
