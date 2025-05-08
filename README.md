@@ -1,7 +1,5 @@
 # React To-Do List App
 
-### Built with
-
 A simple, intuitive, and responsive to-do list application built with React. Manage your daily tasks, mark them as complete, and stay organized!
 
 ### Screenshot
