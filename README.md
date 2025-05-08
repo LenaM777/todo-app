@@ -4,13 +4,6 @@
 
 A simple, intuitive, and responsive to-do list application built with React. Manage your daily tasks, mark them as complete, and stay organized!
 
-### Built with
-
-- React – library for building user interfaces
-- Vite – for fast project setup and development server
-- JavaScript / HTML / CSS – standard web technologies
-- react-icons – icon library used for UI elements
-
 ### Screenshot
 
 ![Screenshot of the To-Do App](public/screenshot.png)
